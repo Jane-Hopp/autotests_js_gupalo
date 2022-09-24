@@ -1,0 +1,42 @@
+ВСЕ ТЕСТЫ НАХОДЯТСЯ В ПАПКЕ "tests" И ИМЕЮТ СЛЕДУЮЩИЕ НАЗВАНИЯ: test1, test2, test3, test4
+
+ДЛЯ ЗАПУСКА ТЕСТОВ ДОЛЖНЫ БЫТЬ ПРЕДВАРИТЕЛЬНО УСТАНОВЛЕНЫ:
+
+1. Node.js (версия в проекте: 18.9.0)
+https://nodejs.org/en/
+
+2. Playwright (версия в проекте: 1.26.0)
+https://playwright.dev/
+Установка через командную строку: npm init playwright@latest
+
+ЗАПУСК ТЕСТОВ ЧЕРЕЗ КОМАНДНУЮ СТРОКУ WINDOWS/LINUX:
+
+1. Прогон одного теста (где test1 – название теста)
+npx playwright test test1.spec.js 
+
+2. Прогон теста с открытием браузеров:
+npx playwright test test1.spec.js --headed 
+
+3. Прогон всех тестов:
+npx playwright test 
+
+ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ:
+
+Формирование отчетности с использованием Allure Framework (версия в проекте: 2.18.1)
+https://www.npmjs.com/package/allure-playwright
+
+1. Установка:
+npm i allure-playwright
+
+2. Установка инструмента allure-commandline для взаимодействия с Allure в терминале:
+npm i -D allure-commandline
+
+3. Запуск всех тестов с репортером Allure:
+npx playwright test --reporter=line,allure-playwright 
+
+4. Создание отчета на основе файлов JSON, которые находятся в папке allure-results:
+npx allure generate ./allure-results --clean  
+
+5. Открытие отчета:
+npx allure open ./allure-report 
+
