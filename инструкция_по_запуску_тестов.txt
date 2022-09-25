@@ -1,43 +1,42 @@
 ЗАПУСК ТЕСТОВ ДОЛЖЕН ОСУЩЕСТВЛЯТЬСЯ ИЗ ПАПКИ autotests_js_gupalo (из той папки, в которой будет находиться весь проект)
 ВСЕ ТЕСТЫ НАХОДЯТСЯ В ПАПКЕ "tests" ИМЕЮТ СЛЕДУЮЩИЕ НАЗВАНИЯ: test1, test2, test3, test4
 
-ДЛЯ ЗАПУСКА ТЕСТОВ ДОЛЖНЫ БЫТЬ ПРЕДВАРИТЕЛЬНО УСТАНОВЛЕНЫ:
+ДЛЯ ЗАПУСКА ТЕСТОВ ДОЛЖЕН БЫТЬ ПРЕДВАРИТЕЛЬНО УСТАНОВЛЕН:
 
-1. Node.js (версия в проекте: 18.9.0)
+Node.js (версия в проекте: 18.9.0)
 https://nodejs.org/en/
 
-2. Playwright (версия в проекте: 1.26.0)
-https://playwright.dev/
-Установка через командную строку: npm init playwright@latest
+ДЛЯ ЗАПУСКА ТЕСТОВ ЧЕРЕЗ КОМАНДНУЮ СТРОКУ WINDOWS/LINUX НЕОБХОДИМО:
 
-ЗАПУСК ТЕСТОВ ЧЕРЕЗ КОМАНДНУЮ СТРОКУ WINDOWS/LINUX:
+1. В командной строке перейти в папку проекта
 
-1. Прогон одного теста (где test1 – название теста)
-npx playwright test test1.spec.js 
+2. Ввести команду для установки всех зависимостей проекта:
+npm install
 
-2. Прогон теста с открытием браузеров:
-npx playwright test test1.spec.js --headed 
+3. Ввести команду для прогона теста/тестов:
 
-3. Прогон всех тестов:
-npx playwright test 
+    Прогон одного теста (где test1 – название теста):
+    npx playwright test test1.spec.js 
+
+    Прогон теста с открытием браузеров:
+    npx playwright test test1.spec.js --headed 
+
+    Прогон всех тестов:
+    npx playwright test 
 
 ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ:
 
 Формирование отчетности с использованием Allure Framework (версия в проекте: 2.18.1)
 https://www.npmjs.com/package/allure-playwright
 
-1. Установка:
-npm i allure-playwright
+ДЛЯ ФОРМИРОВАНИЯ ОТЧЕТА ЧЕРЕЗ КОМАНДНУЮ СТРОКУ WINDOWS/LINUX НЕОБХОДИМО:
 
-2. Установка инструмента allure-commandline для взаимодействия с Allure в терминале:
-npm i -D allure-commandline
-
-3. Запуск всех тестов с репортером Allure:
+1. Осуществить прогон всех тестов с репортером Allure:
 npx playwright test --reporter=line,allure-playwright 
 
-4. Создание отчета на основе файлов JSON, которые находятся в папке allure-results:
+2. Создать отчет на основе файлов JSON, которые находятся в папке allure-results:
 npx allure generate ./allure-results --clean  
 
-5. Открытие отчета:
+3. Открыть отчет:
 npx allure open ./allure-report 
 
